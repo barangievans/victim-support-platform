@@ -1,31 +1,25 @@
-/* src/components/NavBar.css */
-nav {
-    background-color: #2c3e50;  /* Dark background color */
-    padding: 15px 20px;         /* Padding for spacing */
-    display: flex;              /* Use flexbox to align the items horizontally */
-    justify-content: space-evenly; /* Evenly space the links across the navbar */
-    align-items: center;        /* Vertically center the items */
-    position: fixed;            /* Fix the navbar at the top of the page */
-    top: 0;                     /* Position it at the top */
-    left: 0;                    /* Align it to the left */
-    width: 100%;                /* Full width */
-    z-index: 1000;              /* Ensure the navbar stays on top of other content */
-}
-
-nav a {
-    color: #ecf0f1;             /* Light text color */
-    text-decoration: none;      /* Remove underline */
-    font-size: 18px;            /* Font size */
-    font-weight: bold;          /* Make the text bold */
-    transition: color 0.3s;     /* Smooth color transition on hover */
-    padding: 5px 15px;          /* Space around the links for better clickability */
-}
-
-nav a:hover {
-    color: #3498db;             /* Highlight color when hovered */
-}
-
-/* Add some padding to the body so the content is below the fixed navbar */
-body {
-    padding-top: 60px;          /* Ensure content isn't hidden behind the fixed navbar */
-}
+.navbar {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+  }
+  

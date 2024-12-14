@@ -1,16 +1,19 @@
 // src/pages/AdminLogin.jsx
 import React, { useState } from 'react';
 
-const AdminLogin = ({ onLogin }) => {
+const AdminLogin = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (onLogin) {
-      onLogin({ username, password }); // Use onLogin from props
+
+    // Mock login logic, replace with actual authentication
+    if (username === 'admin' && password === 'password') {
+      localStorage.setItem('adminToken', 'fake_token'); // Set token in localStorage
+      onLoginSuccess(); // Call the parent callback on login success
     } else {
-      console.error('onLogin function is not provided!');
+      alert('Invalid credentials');
     }
   };
 

@@ -1,120 +1,146 @@
-/* General Styles */
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .admin-dashboard {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
     background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
+header h1 {
+    font-size: 1.8em;
 }
 
 button {
-    padding: 10px 15px;
-    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #264653;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: white;
     cursor: pointer;
+    font-size: 1em;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2a9d8f;
+}
+
+button:focus {
+    outline: none;
 }
 
 /* Overview Section */
 .overview {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #fff;
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .overview h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.overview p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.overview strong {
+    color: #264653;
 }
 
 /* Quick Actions Section */
 .quick-actions {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .quick-actions h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .quick-actions button {
-    margin-right: 10px;
+    width: 100%;
 }
 
 /* Recent Activities Section */
 .recent-activities {
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
 .recent-activities h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.recent-activities h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 1.5em;
     margin-bottom: 20px;
 }
 
-th, td {
-    padding: 10px;
+.recent-activities h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.recent-activities table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.recent-activities table th, .recent-activities table td {
+    padding: 12px;
     border: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
 }
 
-th {
-    background-color: #f2f2f2;
+.recent-activities table th {
+    background-color: #264653;
+    color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.recent-activities table td {
+    background-color: white;
 }
 
-tr:hover {
-    background-color: #f1f1f1;
+.recent-activities table td button {
+    background-color: #e76f51;
+    margin: 5px;
 }
 
-/* Select Dropdown */
+.recent-activities table td button:hover {
+    background-color: #f4a261;
+}
+
+/* Form Elements */
 select {
-    padding: 5px;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ddd;
-    margin-left: 10px;
-    cursor: pointer;
+}
+
+select:focus {
+    outline-color: #264653;
 }

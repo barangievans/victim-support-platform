@@ -27,17 +27,17 @@ const Footer = () => {
 
                 <div className="footer-section">
                     <h3>Contact Us</h3>
-                    <p>Email: <a href="mailto:support@victimsupport.com">support@victimsupport.com</a></p>
-                    <p>Phone: +1 800 123 4567</p>
-                    <p>Address: 123 Support Lane, Victim City, Country</p>
+                    <p>Email: <a href="mailto:barangievans@gmail.com">barangievans@gmail.com</a></p>
+                    <p>Phone: +254721971593</p>
+                    <p>Address: Juja Town, Rim Plaza, Kiambu</p>
                 </div>
 
                 <div className="footer-section">
                     <h3>Follow Us</h3>
                     <ul>
-                        <li><a href="https://facebook.com/victimsupport" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://twitter.com/victimsupport" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                        <li><a href="https://instagram.com/victimsupport" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><button className="social-button" aria-label="Facebook link">Facebook</button></li>
+                        <li><button className="social-button" aria-label="Twitter link">Twitter</button></li>
+                        <li><button className="social-button" aria-label="Instagram link">Instagram</button></li>
                         <li><a href="https://linkedin.com/company/victimsupport" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                     </ul>
                 </div>

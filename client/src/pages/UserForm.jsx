@@ -26,7 +26,8 @@ const UserForm = () => {
 
     return (
         <div>
-            <h2>User Registration</h2>
+            <h2>Welcome!</h2>
+            <p>Register with us</p>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username:</label>
