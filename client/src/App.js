@@ -9,7 +9,9 @@ import ResourceList from './components/ResourceList';
 import BookAppointment from './components/BookAppointment';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import VictimSupportServices from './pages/VictimSupportServices';  // Updated import path
+import VictimSupportServices from './pages/VictimSupportServices'; // Import the VictimSupportServices component
+import SuperAdminDashboard from './components/SuperAdminDashboard'; // Corrected import path for SuperAdminDashboard
+import AdminSignUp from './pages/AdminSignUp'; // Corrected import path for AdminSignUp
 
 const App = () => {
   return (
@@ -24,6 +26,10 @@ const App = () => {
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-signup" element={<AdminSignUp />} /> {/* Corrected AdminSignUp route */}
+            
+            {/* Super Admin Routes */}
+            <Route path="/super-admin" element={<SuperAdminDashboard />} /> {/* Super Admin Dashboard Route */}
             
             {/* User Routes */}
             <Route path="/user-form" element={<UserForm />} />
@@ -35,10 +41,8 @@ const App = () => {
             {/* Other Routes */}
             <Route path="/resource-list" element={<ResourceList />} />
             <Route path="/book-appointment" element={<BookAppointment />} />
-
-            {/* Victim Support Services Route */}
-            <Route path="/victim-support-services" element={<VictimSupportServices />} /> {/* Updated route */}
-
+            <Route path="/victim-support-services" element={<VictimSupportServices />} />
+            
             {/* Home Route */}
             <Route path="/" element={<h1>Welcome to the Victim Support Platform</h1>} />
           </Routes>

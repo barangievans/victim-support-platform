@@ -1,66 +1,57 @@
-// src/App.js
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Removed useNavigate
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
+import AdminSignUp from './pages/AdminSignUp';
+import SuperAdminDashboard from './pages/SuperAdminDashboard';  // Import SuperAdminDashboard
 import UserForm from './pages/UserForm';
 import SignupForm from './pages/SignupForm';
-import GenerateReport from './pages/GenerateReports';  // Import the GenerateReport component
-import BookAppointment from './components/BookAppointment';  // Import the AppointmentForm component
-import ResourceList from './components/ResourceList';  // Correct the path to ResourceList
-import VictimSupportServices from './pages/VictimSupportServices';  // Import VictimSupportServices page
+import GenerateReport from './pages/GenerateReports';
+import ResourceList from './components/ResourceList';
+import BookAppointment from './components/BookAppointment';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer'; // Import the Footer component
+import Footer from './components/Footer';
+import VictimSupportServices from './pages/VictimSupportServices';
 
 const App = () => {
-  // Check login state from localStorage
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // This function will handle login success and redirect user to admin dashboard
-  const handleLoginSuccess = (navigate) => {
-    setIsLoggedIn(true);
-    navigate('/admin'); // Redirect to admin dashboard after login
-  };
-
-  useEffect(() => {
-    if (localStorage.getItem('adminToken')) {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
   return (
-    <Router>
+    <Router> {/* Ensure Router wraps the entire app */}
       <div>
-        {/* Show NavBar only if logged in */}
-        {isLoggedIn && <NavBar />} 
-
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        {/* Navigation Bar */}
+        <NavBar />
+        
+        {/* Main content area */}
+        <div>
           <Routes>
             {/* Admin Routes */}
-            <Route 
-              path="/admin" 
-              element={isLoggedIn ? <AdminDashboard /> : <AdminLogin onLoginSuccess={handleLoginSuccess} />} 
-            />
-            <Route path="/admin-login" element={<AdminLogin onLoginSuccess={handleLoginSuccess} />} />
-
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-signup" element={<AdminSignUp />} />  
+            
+            {/* Super Admin Routes */}
+            <Route path="/super-admin" element={<SuperAdminDashboard />} />  {/* Super Admin Dashboard route */}
+            
             {/* User Routes */}
             <Route path="/user-form" element={<UserForm />} />
             <Route path="/signup" element={<SignupForm />} />
-
-            {/* Generate Report Route */}
+            
+            {/* Reports Route */}
             <Route path="/generate-reports" element={<GenerateReport />} />
-
-            {/* Newly added Routes */}
+            
+            {/* Other Routes */}
             <Route path="/resource-list" element={<ResourceList />} />
             <Route path="/book-appointment" element={<BookAppointment />} />
-            <Route path="/admin/victim-support-services" element={<VictimSupportServices />} />
 
+            {/* Victim Support Services Route */}
+            <Route path="/victim-support-services" element={<VictimSupportServices />} />
+            
             {/* Home Route */}
             <Route path="/" element={<h1>Welcome to the Victim Support Platform</h1>} />
           </Routes>
         </div>
 
-        <Footer /> {/* Add the Footer component */}
+        {/* Footer */}
+        <Footer />
       </div>
     </Router>
   );
