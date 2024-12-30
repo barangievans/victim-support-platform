@@ -1,16 +1,12 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_cors import CORS
+from routes.users import api_routes  # Correctly import from 'users.py'
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'  # Change this to your actual database URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app)  # Enable CORS for all domains
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
-# Import your models after initializing db
-from models import PanelMember, Victim, Service  # Ensure this path is correct
+# Register the routes Blueprint
+app.register_blueprint(api_routes)
 
 if __name__ == "__main__":
     app.run(debug=True)
